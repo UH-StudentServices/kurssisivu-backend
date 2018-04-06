@@ -1,0 +1,32 @@
+{
+  "name": "kurssisivu-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniversityOfHelsinkiCS/kurssisivu-backend.git"
+  },
+  "author": "Matti Luukkainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UniversityOfHelsinkiCS/kurssisivu-backend/issues"
+  },
+  "homepage": "https://github.com/UniversityOfHelsinkiCS/kurssisivu-backend#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.0",
+    "nodemon": "^1.17.3",
+    "redis": "^2.8.0",
+    "winston": "^2.4.1"
+  }
+}
