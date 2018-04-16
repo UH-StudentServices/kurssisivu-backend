@@ -8,16 +8,20 @@ require('bluebird').promisifyAll(redis.RedisClient.prototype)
 require('dotenv').config()
 
 const formatCourse = (course) => {
-  const organizationsOf = (course) => {
-    const codes = course['organisations'].map(o => o.code)
-      .concat(...course['courses_extra_organisations'].map(o => o.code))
-      .concat(...course['providing_organisation'].map(o => o.code))
+  const organizationsOf = (c) => {
+    const codes = c['organisations'].map(o => o.code)
+      .concat(...c['courses_extra_organisations'].map(o => o.code))
+      .concat(...c['providing_organisation'].map(o => o.code))
 
     return _.uniq(codes)
   }
 
+  if (course.parent_id !== null) {
+    return null
+  }
+
   const relevantKeys = [
-    'start_date', 'end_date', 'credit_points', 'course_id', 
+    'start_date', 'end_date', 'credit_points', 'course_id', 'parent_id',
     'learningopportunity_id', 'languages', 'realisation_name', 'realisation_type_code',
   ]
 
@@ -34,6 +38,12 @@ const courseInfo = async (id) => {
   const url = `${process.env.OODI_BASE_URL}/courseunitrealisations/${id}`
   const response = await axios.get(url)
   return formatCourse(response.data.data)
+}
+
+const learningOpportunityInfo = async (opportunityId) => {
+  const url = `${process.env.OODI_BASE_URL}/learningopportunities/${opportunityId}`
+  const response = await axios.get(url)
+  return response.data.data
 }
 
 const courseIdsOfOrganization = async (organization) => {
@@ -90,6 +100,15 @@ async function run() {
   const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST)
 
   const validOrganizationCodes = JSON.parse(await redisClient.getAsync(process.env.ORGANIZATIONS_KEY))
+  const learningOpportunityTypecodes = JSON.parse(await redisClient.getAsync(process.env.LEARNING_OPPORTUNITIES_KEY)) || {}
+
+  const learningOpportunityTypecode = async (opportunity_id) => {
+    if (learningOpportunityTypecodes[opportunity_id]===undefined) {
+      const learningOpportunity = await learningOpportunityInfo(opportunity_id)
+      learningOpportunityTypecodes[opportunity_id] = learningOpportunity.learningopportunity_type_code
+    }
+    return learningOpportunityTypecodes[opportunity_id]
+  }
 
   const coursesOfOrganization = validOrganizationCodes.reduce((object, code) => {
     object[code] = []; return object
@@ -101,13 +120,24 @@ async function run() {
     const organization = validOrganizationCodes[i]
     winston.info(` organization ${organization}`)
 
+    if (organization !== '500-K005' && organization !== '500-M009' ) {
+      continue
+    }
+
     const courseIds = await courseIdsOfOrganization(organization)
     for (let j = 0; j < courseIds.length; j++) {
-      const courseId = courseIds[j];
+      const courseId = courseIds[j]
       
       const course = await courseInfo(courseId)
+      
+      if (course===null) {
+        continue
+      }
+
       course.periods = periodsOf(course)
       course.years = _.uniq([ moment(course.start_date).year(), moment(course.end_date).year()])
+
+      course.learningopportunity_type_code = await learningOpportunityTypecode(course.learningopportunity_id)
 
       course.organisations.filter(code => validOrganizationCodes.includes(code)).forEach(organisationOfCourse=>{
         coursesOfOrganization[organisationOfCourse].push(course)
@@ -116,6 +146,7 @@ async function run() {
   }
   
   await redisClient.setAsync(process.env.COURSES_KEY, JSON.stringify(coursesOfOrganization))
+  await redisClient.setAsync(process.env.LEARNING_OPPORTUNITIES_KEY, JSON.stringify(learningOpportunityTypecodes))
 
   winston.info('finished cache refresh')
 
@@ -123,3 +154,7 @@ async function run() {
 }
 
 run()
+
+process.on('unhandledRejection', (reason, p) => {
+  console.log(reason)
+});
