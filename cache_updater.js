@@ -120,10 +120,6 @@ async function run() {
     const organization = validOrganizationCodes[i]
     winston.info(` organization ${organization}`)
 
-    if (organization !== '500-K005' && organization !== '500-M009' ) {
-      continue
-    }
-
     const courseIds = await courseIdsOfOrganization(organization)
     for (let j = 0; j < courseIds.length; j++) {
       const courseId = courseIds[j]
