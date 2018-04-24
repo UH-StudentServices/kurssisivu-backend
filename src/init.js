@@ -1,8 +1,5 @@
-const redis = require('redis')
-require('bluebird').promisifyAll(redis.RedisClient.prototype)
+const redisClient = require('./util/redis')
 require('dotenv').config()
-
-const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST)
 
 async function run() {
   const codes = [ 
@@ -24,4 +21,13 @@ async function run() {
   redisClient.quit()
 }
 
-run()
+//run()
+
+async function run2() {
+
+  const courses = await redisClient.getAsync(process.env.COURSES_KEY)
+  console.log(JSON.stringify(JSON.parse(courses), null, 2))
+  redisClient.quit()
+}
+
+run2()

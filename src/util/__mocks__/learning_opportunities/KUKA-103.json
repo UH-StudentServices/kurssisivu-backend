@@ -1,0 +1,112 @@
+{
+  "disciplines": [],
+  "learningopportunity_type_code": 12,
+  "last_changed": "2017-02-14T07:02:29.000Z",
+  "faculties": [],
+  "credit_points_max": 5,
+  "end_date": "2112-12-20T22:00:00.000Z",
+  "start_date": "2016-12-31T22:00:00.000Z",
+  "hidden": "false",
+  "learningopportunity_internal": 117854981,
+  "credit_points_min": 5,
+  "organisations": [
+    {
+      "code": "400-K005",
+      "percentage": 100,
+      "start_date": "1899-12-31T22:00:00.000Z",
+      "end_date": "2112-12-20T22:00:00.000Z",
+      "name": [
+        {
+          "langcode": "fi",
+          "text": "Kulttuurien tutkimuksen kandiohjelma"
+        },
+        {
+          "langcode": "sv",
+          "text": "Kandidatprogrammet i kulturforskning"
+        },
+        {
+          "langcode": "en",
+          "text": "Bachelor's Programme in Cultural Studies"
+        }
+      ]
+    }
+  ],
+  "materials": [],
+  "degree_programme": [],
+  "languages": [
+    {
+      "langcode": "fi"
+    }
+  ],
+  "descriptions": [
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Opiskelija ymmärtää alueellisia olosuhteita ja jakoja sekä osaa soveltaa aikaan, paikkaa ja ympäristöön liittyviä käsitteitä ja lähestymistapoja kulttuurien tutkimuksen kontekstissa.</p> <p> </p> <p> </p> <p><strong> </strong></p> <p> </p> <p> </p> <p> </p>"
+        }
+      ],
+      "id": "1"
+    },
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Opintojakson tarkka sisältö määräytyy kurssikohtaisesti. Kursseilla perehdytään erityisesti tilallisiin käsitteisiin (esim. alue, paikka, raja) kulttuurisessa tutkimuksessa ja niiden soveltamiseen erityisten alueellisten kysymysten ja empiiristen tapausesimerkkien yhteydessä.</p>"
+        }
+      ],
+      "id": "2"
+    },
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Opintojaksoon soveltuva luentokurssi, johon sisältyy kirjallisuutta ja kurssin mukaan sovellettuja tehtäviä. Vaihtoehtoisesta suoritustavasta esim. kirjallisuuskuulustelusta tai esseestä sovitaan opintojakson vastuuopettajan kanssa.</p>"
+        }
+      ],
+      "id": "3"
+    },
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Opintojaksossa käytettävä kirjallisuus määräytyy suoritettavan kurssin mukaan.</p>"
+        }
+      ],
+      "id": "4"
+    },
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Opintojakso arvostellaan asteikolla 0-5. Opintojakson arvosana määräytyy suoritustavan (esim. luentokurssi) mukaisesti määriteltyjen tehtävien, aktiivisuuden ja muiden suoritusvaatimusten perusteella. Arviointimenetelmät ovat kiinteässä yhteydessä osaamistavoitteisiin ja opintojakson opetusmenetelmiin.</p>"
+        }
+      ],
+      "id": "5"
+    },
+    {
+      "texts": [
+        {
+          "langcode": "fi",
+          "text": "<p>Aktiivinen läsnäolo luennoilla sekä kurssikohtaisesti määräytyvät yksilö- ja ryhmätyöt.</p>"
+        }
+      ],
+      "id": "118271186"
+    }
+  ],
+  "learningopportunity_id": "KUKA-103",
+  "names": [
+    {
+      "langcode": "fi",
+      "text": "Alue, paikka ja ympäristö"
+    },
+    {
+      "langcode": "sv",
+      "text": "Region, lokal och miljö"
+    },
+    {
+      "langcode": "en",
+      "text": "Area, Location and Environment"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "500-K001": [
+    {
+      "start_date": "2018-05-13T21:00:00.000Z",
+      "end_date": "2018-05-22T21:00:00.000Z",
+      "credit_points": 2,
+      "course_id": 124236673,
+      "parent_id": null,
+      "learningopportunity_id": "TKT21019",
+      "languages": [
+        {
+          "langcode": "en"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Introduction to Lambda Calculus"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005",
+        "500-K001"
+      ],
+      "periods": [
+        5
+      ],
+      "years": [
+        2018
+      ],
+      "learningopportunity_type_code": 2
+    }
+  ],
+  "500-K002": [],
+  "500-M010": [
+      {
+        "start_date": "2018-04-12T21:00:00.000Z",
+        "end_date": "2018-04-12T21:00:00.000Z",
+        "credit_points": 5,
+        "course_id": 122767445,
+        "parent_id": null,
+        "learningopportunity_id": "CSM12103",
+        "languages": [
+          {
+            "langcode": "fi"
+          }
+        ],
+        "realisation_name": [
+          {
+            "langcode": "fi",
+            "text": "Data Compression Techniques"
+          },
+          {
+            "langcode": "sv",
+            "text": "Data Compression Techniques"
+          },
+          {
+            "langcode": "en",
+            "text": "Data Compression Techniques"
+          }
+        ],
+        "realisation_type_code": 8,
+        "organisations": [
+          "500-M010"
+        ],
+        "periods": [
+          4
+        ],
+        "years": [
+          2018
+        ],
+        "learningopportunity_type_code": 3
+      }
+  ],
+  "500-K005": [
+    {
+      "start_date": "2017-10-31T22:00:00.000Z",
+      "end_date": "2017-12-14T22:00:00.000Z",
+      "credit_points": 5,
+      "course_id": 119284687,
+      "parent_id": null,
+      "learningopportunity_id": "TKT21002",
+      "languages": [
+        {
+          "langcode": "en"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Introduction to Game Programming"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005"
+      ],
+      "periods": [
+        2
+      ],
+      "years": [
+        2017
+      ],
+      "learningopportunity_type_code": 2
+    },
+    {
+      "start_date": "2017-09-03T21:00:00.000Z",
+      "end_date": "2017-12-16T22:00:00.000Z",
+      "credit_points": 6,
+      "course_id": 119284698,
+      "parent_id": null,
+      "learningopportunity_id": "TKT20013",
+      "languages": [
+        {
+          "langcode": "fi"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Kandidaatin tutkielma"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005"
+      ],
+      "periods": [
+        1,
+        2
+      ],
+      "years": [
+        2017
+      ],
+      "learningopportunity_type_code": 2
+    },
+    {
+      "start_date": "2017-09-04T21:00:00.000Z",
+      "end_date": "2017-10-16T21:00:00.000Z",
+      "credit_points": 5,
+      "course_id": 119284736,
+      "parent_id": null,
+      "learningopportunity_id": "TKT10002",
+      "languages": [
+        {
+          "langcode": "fi"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Ohjelmoinnin perusteet"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005"
+      ],
+      "periods": [
+        1
+      ],
+      "years": [
+        2017
+      ],
+      "learningopportunity_type_code": 12
+    },
+    {
+      "start_date": "2018-03-11T22:00:00.000Z",
+      "end_date": "2018-05-01T21:00:00.000Z",
+      "credit_points": 5,
+      "course_id": 119553005,
+      "parent_id": null,
+      "learningopportunity_id": "TKT21004",
+      "languages": [
+        {
+          "langcode": "en"
+        },
+        {
+          "langcode": "fi"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Computer Organization II"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005"
+      ],
+      "periods": [
+        4
+      ],
+      "years": [
+        2018
+      ],
+      "learningopportunity_type_code": 2
+    },
+    {
+      "start_date": "2018-05-13T21:00:00.000Z",
+      "end_date": "2018-05-22T21:00:00.000Z",
+      "credit_points": 2,
+      "course_id": 124236673,
+      "parent_id": null,
+      "learningopportunity_id": "TKT21019",
+      "languages": [
+        {
+          "langcode": "en"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Introduction to Lambda Calculus"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005",
+        "500-K001"
+      ],
+      "periods": [
+        5
+      ],
+      "years": [
+        2018
+      ],
+      "learningopportunity_type_code": 2
+    },
+    {
+      "start_date": "2018-01-14T22:00:00.000Z",
+      "end_date": "2018-02-25T22:00:00.000Z",
+      "credit_points": 6,
+      "course_id": 119553016,
+      "parent_id": null,
+      "learningopportunity_id": "TKT20013",
+      "languages": [
+        {
+          "langcode": "fi"
+        }
+      ],
+      "realisation_name": [
+        {
+          "langcode": "fi",
+          "text": "Kandidaatin tutkielma"
+        }
+      ],
+      "realisation_type_code": 5,
+      "organisations": [
+        "500-K005"
+      ],
+      "periods": [
+        3
+      ],
+      "years": [
+        2018
+      ],
+      "learningopportunity_type_code": 2
+    }
+  ]
+}
