@@ -10,10 +10,6 @@ const formatCourse = (course) => {
     return _.uniq(codes)
   }
 
-  if (course.parent_id !== null) {
-    return null
-  }
-
   const relevantKeys = [
     'start_date', 'end_date', 'credit_points', 'course_id', 'parent_id',
     'learningopportunity_id', 'languages', 'realisation_name', 'realisation_type_code',
@@ -28,10 +24,20 @@ const formatCourse = (course) => {
   return formattedCourse
 }
 
-const getCoursePeriods = (allPeriods) => async (course) => {
+const getCoursePeriods = (periodInfo) => async (course) => {
+  const groupByYear = (periods, period) => {
+    const year = moment(period.start_date).year()
+
+    periods[year] = periods[year] ? periods[year].concat(period) : [period]
+
+    return periods
+  }
+
+  const periodsOfYear = periodInfo.reduce(groupByYear, {})
+
   const courseStart = moment(course.start_date)
   const courseEnd = moment(course.end_date)
-  const possiblePeriods = allPeriods[courseStart.year()]
+  const possiblePeriods = periodsOfYear[courseStart.year()]
 
   const periodNumber = (period) => {
     const finnishName = period.name.find(name => name.langcode === 'fi')

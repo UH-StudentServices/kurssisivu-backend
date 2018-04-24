@@ -5,8 +5,6 @@ const redisClient = require('./util/redis')
 const cache = require('./util/cache')
 const util = require('./util')
 
-require('dotenv').config()
-
 const app = express()
 
 app.use(cors())
@@ -25,11 +23,6 @@ const byQuery = (params) => (course) => {
 
   return true
 }
-
-app.use((req, res, next) => {
-  console.log(req.path)
-  next()
-})
 
 app.get('/ping', (req, res) => {
   res.json({ message: 'pong' })

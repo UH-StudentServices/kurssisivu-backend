@@ -1,7 +1,7 @@
-require('dotenv').config()
 const redis = require('redis')
 require('bluebird').promisifyAll(redis.RedisClient.prototype)
+const config = require('../config')
 
-const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST)
+const redisClient = redis.createClient(config.REDIS_PORT, config.REDIS_HOST)
 
 module.exports = redisClient

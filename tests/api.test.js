@@ -1,9 +1,10 @@
 const supertest = require('supertest')
-require('dotenv').config()
 const app = require('../src/app')
 jest.mock('../src/util/redis')
+const config = require('../src/config')
 const redisClient = require('../src/util/redis')
 const api = supertest(app)
+
 
 const idsOf = (courses) => courses.map(c => c.course_id).sort()
 
@@ -19,7 +20,7 @@ it('should pong when pinged', async () => {
 describe('given there are courses cached in redis', () => {
   beforeAll(async () => {
     const data = require('./courses_in_redis.json')
-    await redisClient.setAsync(process.env.COURSES_KEY, JSON.stringify(data))
+    await redisClient.setAsync(config.COURSES_KEY, JSON.stringify(data))
   })
 
   describe('when courses of one organisation are requested', () => {
@@ -66,7 +67,7 @@ describe('given there are courses cached in redis', () => {
         .expect('Content-Type', /application\/json/)
 
       expect(response.body.length).toEqual(0)
-    })  
+    })     
   })
 
   describe('when courses of two organisations are requested', () => {
@@ -93,7 +94,17 @@ describe('given there are courses cached in redis', () => {
       expect(courses.length).toEqual(2)
       expect(idsOf(courses)).toEqual([119553005, 119553016])
     })  
+  
   })
+
+  describe('when courses of invalid organisation are requested', () => {
+    it('should respond with a proper error code', async () => {
+      const response = await api
+        .get('/organizations/500-K000/courses_list.json?semester=autumn&year=2017')
+        .expect(400)
+        .expect('Content-Type', /application\/json/)
+    })
+  })  
 
 })
 

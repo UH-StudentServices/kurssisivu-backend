@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
-    "test": "COURSES_KEY=courses ORGANIZATIONS_KEY=codes LEARNING_OPPORTUNITIES_KEY=opportunities REDIS_HOST=localhost REDIS_PORT=6379 PORT=3001 jest --verbose",
+    "test": "jest --verbose",
     "coverage": "jest --coverage"
   },
   "repository": {

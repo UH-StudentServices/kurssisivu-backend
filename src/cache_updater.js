@@ -28,24 +28,23 @@ const run = async () => {
   
   logger.info('started cache refresh')
 
-  let stop = 0
-
-  for (let i = 0; i < validOrganizationCodes.length && stop==0; i++) {
+  for (let i = 0; i < validOrganizationCodes.length ; i++) {
     const organization = validOrganizationCodes[i]
     logger.info(` organization ${organization}`)
 
     const courseIds = await oodiApi.courseIdsOfOrganization(organization)
 
-    for (let j = 0; j < courseIds.length && j == 0; j++ ) {
+    for (let j = 0; j < courseIds.length; j++ ) {
       const courseId = courseIds[j]
       
-      const course = await oodiApi.courseInfo(courseId)
+      const rawCourse = await oodiApi.courseInfo(courseId)
 
-      if (course===null) {
+      // do not cache children of a course instance
+      if (rawCourse.parent_id !== null) {
         continue
       }
 
-      stop = 1
+      const course = util.formatCourse(rawCourse)
 
       course.periods = await periodsOf(course)
 
@@ -67,9 +66,5 @@ const run = async () => {
 
   cache.exit()
 }
-
-process.on('unhandledRejection', (reason, p) => {
-  console.log(reason)
-})
 
 module.exports = { run }

@@ -1,0 +1,184 @@
+{
+  "realisation_name": [
+    {
+      "langcode": "fi",
+      "text": "Ryhmä 1"
+    }
+  ],
+  "students": [
+  ],
+  "deleted": "false",
+  "credit_points": 5,
+  "last_changed": "2017-10-25T08:12:51.000Z",
+  "providing_organisation": [],
+  "instruction_locality": [],
+  "events": [
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-11-07T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-11-07T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    },
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-11-14T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-11-14T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    },
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-11-21T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-11-21T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    },
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-11-28T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-11-28T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    },
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-12-05T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-12-05T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    },
+    {
+      "weekday_code": 2,
+      "building_id": "53",
+      "room_name_short": "Exactum, D122",
+      "event_id": 121524715,
+      "building_country": "FI",
+      "end_date": "2017-12-12T14:00:00.000Z",
+      "building_address2": null,
+      "start_date": "2017-12-12T12:15:00.000Z",
+      "building_zipcode": null,
+      "course_id": 119284691,
+      "building_address1": "Gustaf Hällströmin katu 2b",
+      "event_duration": 105,
+      "room_id": 57652036,
+      "room_name": "Exactum, D122"
+    }
+  ],
+  "realisation_type_code": 7,
+  "officials": [],
+  "child_ids": [],
+  "enroll_end_date": "2017-12-15T21:59:00.000Z",
+  "enroll_start_date": "2017-10-10T06:00:00.000Z",
+  "courses_extra_organisations": [],
+  "teachers": [],
+  "courseunitrealisation_status": 2,
+  "cancelled": "false",
+  "group_max_size": 50,
+  "end_date": "2017-12-11T22:00:00.000Z",
+  "start_date": "2017-11-06T22:00:00.000Z",
+  "hidden": "false",
+  "parent_id": 119284687,
+  "organisations": [
+    {
+      "code": "500-K005",
+      "percentage": 100,
+      "name": [
+        {
+          "langcode": "fi",
+          "text": "Tietojenkäsittelytieteen kandiohjelma"
+        },
+        {
+          "langcode": "sv",
+          "text": "Kandidatprogrammet i datavetenskap"
+        },
+        {
+          "langcode": "en",
+          "text": "Bachelor's Programme in Computer Science"
+        }
+      ]
+    }
+  ],
+  "course_id": 119284691,
+  "position": "studygroup",
+  "simple_type_code": 3,
+  "providing_locality": [],
+  "learningopportunity_name": [
+    {
+      "langcode": "fi",
+      "text": "Introduction to Game Programming"
+    },
+    {
+      "langcode": "sv",
+      "text": "Introduction to Game Programming"
+    },
+    {
+      "langcode": "en",
+      "text": "Introduction to Game Programming"
+    }
+  ],
+  "realisation_root_name": [
+    {
+      "langcode": "fi",
+      "text": "Introduction to Game Programming"
+    }
+  ],
+  "languages": [
+    {
+      "langcode": "en"
+    }
+  ],
+  "descriptions": [],
+  "learningopportunity_id": "TKT21002",
+  "raw_events": [
+    {
+      "event": "07.11.2017-12.12.2017 14.15-16.00",
+      "event_weekday": "tue"
+    }
+  ]
+}

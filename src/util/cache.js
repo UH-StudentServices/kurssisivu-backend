@@ -1,20 +1,19 @@
 const redisClient = require('./redis')
-
-require('dotenv').config()
+const config = require('../config')
 
 const validOrganizationCodes = async () => 
-  JSON.parse(await redisClient.getAsync(process.env.ORGANIZATIONS_KEY))
+  JSON.parse(await redisClient.getAsync(config.ORGANIZATIONS_KEY))
 
 const learningOpportunityTypecodes = async () => 
-  JSON.parse(await redisClient.getAsync(process.env.LEARNING_OPPORTUNITIES_KEY)) || {}
+  JSON.parse(await redisClient.getAsync(config.LEARNING_OPPORTUNITIES_KEY)) || {}
 
 const saveCoursesOfOrganization = async (coursesOfOrganization) =>
-  await redisClient.setAsync(process.env.COURSES_KEY, JSON.stringify(coursesOfOrganization))
+  await redisClient.setAsync(config.COURSES_KEY, JSON.stringify(coursesOfOrganization))
 
 const saveLearningOpportunityTypecodes = async (learningOpportunityTypecodes) =>  
-  await redisClient.setAsync(process.env.LEARNING_OPPORTUNITIES_KEY, JSON.stringify(learningOpportunityTypecodes))
+  await redisClient.setAsync(config.LEARNING_OPPORTUNITIES_KEY, JSON.stringify(learningOpportunityTypecodes))
 
-const coursesOfOrganization = async () => JSON.parse(await redisClient.getAsync(process.env.COURSES_KEY))
+const coursesOfOrganization = async () => JSON.parse(await redisClient.getAsync(config.COURSES_KEY))
   
 const exit = () => redisClient.quit()
 

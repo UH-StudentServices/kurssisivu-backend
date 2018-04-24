@@ -1,0 +1,61 @@
+{
+  "disciplines": [
+    {
+      "discipline_id": "421"
+    }
+  ],
+  "learningopportunity_type_code": 2,
+  "last_changed": "2017-03-30T09:32:02.000Z",
+  "faculties": [],
+  "credit_points_max": 5,
+  "end_date": "2112-12-20T22:00:00.000Z",
+  "start_date": "2016-12-31T22:00:00.000Z",
+  "hidden": "false",
+  "learningopportunity_internal": 118901507,
+  "credit_points_min": 5,
+  "organisations": [
+    {
+      "code": "500-K005",
+      "percentage": 100,
+      "start_date": "1899-12-31T22:00:00.000Z",
+      "end_date": "2112-12-20T22:00:00.000Z",
+      "name": [
+        {
+          "langcode": "fi",
+          "text": "Tietojenkäsittelytieteen kandiohjelma"
+        },
+        {
+          "langcode": "sv",
+          "text": "Kandidatprogrammet i datavetenskap"
+        },
+        {
+          "langcode": "en",
+          "text": "Bachelor's Programme in Computer Science"
+        }
+      ]
+    }
+  ],
+  "materials": [],
+  "degree_programme": [],
+  "languages": [
+    {
+      "langcode": "en"
+    }
+  ],
+  "descriptions": [],
+  "learningopportunity_id": "TKT21002",
+  "names": [
+    {
+      "langcode": "fi",
+      "text": "Introduction to Game Programming"
+    },
+    {
+      "langcode": "sv",
+      "text": "Introduction to Game Programming"
+    },
+    {
+      "langcode": "en",
+      "text": "Introduction to Game Programming"
+    }
+  ]
+}
