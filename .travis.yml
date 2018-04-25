@@ -15,4 +15,4 @@ services:
 after_success:
   - docker build -t toska/coursepage-backend .
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - docker push
+  - docker push toska/coursepage-backend
