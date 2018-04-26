@@ -8,6 +8,12 @@ const cache = require('./util/cache')
 
 const run = async () => {
   const validOrganizationCodes = await cache.validOrganizationCodes()
+
+  if (validOrganizationCodes.length===0) {
+    logger.info('no organisation codes in cache')
+    return 
+  }
+
   const learningOpportunityTypecodes = await cache.learningOpportunityTypecodes()
 
   const learningOpportunityTypecode = async (opportunity_id) => {
@@ -56,7 +62,7 @@ const run = async () => {
         coursesOfOrganization[organisationOfCourse].push(course)
       })
     } 
-    logger.info(` ready ${organization}`)
+    logger.info(` completed ${organization}`)
   }
   
   await cache.saveCoursesOfOrganization(coursesOfOrganization)

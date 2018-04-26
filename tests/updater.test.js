@@ -7,6 +7,16 @@ jest.mock('../src/util/oodi_api')
 
 const idsOf = (courses) => courses.map(c => c.course_id).sort()
 
+describe('if no valid oganisation', () => {
+  beforeAll(async () => {
+    await redisClient.delAsync(config.ORGANIZATIONS_KEY)
+  })
+
+  it('updated does not crash', async () => {
+    await updater.run()  
+  })
+})
+
 describe('given one valid oganisation', () => {
   let organisationCodes = ['500-K005']
   beforeAll(async () => {

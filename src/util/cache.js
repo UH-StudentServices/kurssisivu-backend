@@ -1,9 +1,11 @@
 const redisClient = require('./redis')
 const config = require('../config')
 
-const validOrganizationCodes = async () => 
-  JSON.parse(await redisClient.getAsync(config.ORGANIZATIONS_KEY))
-
+const validOrganizationCodes = async () => {
+  const codeJson = await redisClient.getAsync(config.ORGANIZATIONS_KEY)
+  return codeJson===null ? [] : JSON.parse(codeJson)
+}
+  
 const learningOpportunityTypecodes = async () => 
   JSON.parse(await redisClient.getAsync(config.LEARNING_OPPORTUNITIES_KEY)) || {}
 
