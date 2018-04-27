@@ -9,4 +9,6 @@ async function run(codes) {
 if (process.argv.length>2) {
   const codes = require(process.argv[2])
   run(codes)
-} 
+} else {
+  console.log('no organisation codes specified')
+}
