@@ -3,5 +3,8 @@
 })()
 
 process.on('unhandledRejection', (reason, p) => {
-  console.log(reason)
+ const logger = require('./src/util/logger')
+  logger.error(reason)
+  logger.error('exiting script')
+  process.exit()
 })

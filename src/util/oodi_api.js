@@ -3,32 +3,30 @@ const config = require('../config')
 
 const BASE_URL = config.OODI_BASE_URL
 
-const courseInfo = async (id) => {
-  const url = `${BASE_URL}/courseunitrealisations/${id}`
-  const response = await axios.get(url)
-
-  return response.data.data
-}
-
-const learningOpportunityInfo = async (opportunityId) => {
-  const url = `${BASE_URL}/learningopportunities/${opportunityId}`
-  const response = await axios.get(url)
+const get = async (url) => {
+  try {
+    const response = await axios.get(url)
+  } catch(e) {
+    throw `${e.code} ${e.config.url}`
+  }
   
   return response.data.data
 }
+
+const courseInfo = async (id) => 
+  await get(`${BASE_URL}/courseunitrealisations/${id}`)
+
+const learningOpportunityInfo = async (opportunityId) => 
+  await get(`${BASE_URL}/learningopportunities/${opportunityId}`)
+
+const periodInfo = async () =>  {
+  await get(`${BASE_URL}/codes/courseunitrealisations/periods`)
+}
+  
 
 const courseIdsOfOrganization = async (organization) => {
-  const url = `${BASE_URL}/courseunitrealisations/organisations/${organization}`
-  const response = await axios.get(url)
-
-  return response.data.data.map(course => course.course_id)
-}
-
-const periodInfo = async () => {
-  const url = `${BASE_URL}/codes/courseunitrealisations/periods`
-  const response = await axios.get(url)
-  
-  return response.data.data
+  const data = await get(`${BASE_URL}/courseunitrealisations/organisations/${organization}`)
+  return data.map(course => course.course_id)
 }
 
 module.exports = {
