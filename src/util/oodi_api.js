@@ -6,11 +6,10 @@ const BASE_URL = config.OODI_BASE_URL
 const get = async (url) => {
   try {
     const response = await axios.get(url)
+    return response.data.data
   } catch(e) {
     throw `${e.code} ${e.config.url}`
   }
-  
-  return response.data.data
 }
 
 const courseInfo = async (id) => 
@@ -23,7 +22,6 @@ const periodInfo = async () =>  {
   await get(`${BASE_URL}/codes/courseunitrealisations/periods`)
 }
   
-
 const courseIdsOfOrganization = async (organization) => {
   const data = await get(`${BASE_URL}/courseunitrealisations/organisations/${organization}`)
   return data.map(course => course.course_id)
