@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
-    "updater": "node update_cache.js", 
+    "updater": "node update_cache.js",
     "test": "jest --verbose",
     "coverage": "jest --coverage"
   },
@@ -32,8 +32,9 @@
     "winston": "^2.4.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3",
+    "axios-mock-adapter": "^1.15.0",
     "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
     "redis-mock": "^0.21.0",
     "supertest": "^3.0.0"
   }
