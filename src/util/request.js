@@ -1,7 +1,4 @@
 const axios = require('axios')
-const config = require('../config')
-
-const BASE_URL = config.OODI_BASE_URL
 
 module.exports = async (url) => {
   try {

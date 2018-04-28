@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const _ = require('lodash')
-const redisClient = require('./util/redis')
 const cache = require('./util/cache')
 const util = require('./util')
 
@@ -47,6 +46,11 @@ app.get('/organizations/:codes/courses_list.json', async (req, res) => {
     res.status(500).json({ error: 'something went wrong' })
   }
 
+})
+
+app.get('/organizations', async (req, res) => {
+  const coursesOfOrganization = await cache.coursesOfOrganization()
+  res.json(Object.keys(coursesOfOrganization).sort())
 })
 
 module.exports = app

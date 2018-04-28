@@ -25,16 +25,7 @@ const formatCourse = (course) => {
 }
 
 const getCoursePeriods = (periodInfo) => async (course) => {
-  const groupByYear = (periods, period) => {
-    const year = moment(period.start_date).year()
-
-    periods[year] = periods[year] ? periods[year].concat(period) : [period]
-
-    return periods
-  }
-
-  const periodsOfYear = periodInfo.reduce(groupByYear, {})
-
+  const periodsOfYear = _.groupBy(periodInfo, (period) => moment(period.start_date).year())
   const courseStart = moment(course.start_date)
   const courseEnd = moment(course.end_date)
   const possiblePeriods = periodsOfYear[courseStart.year()]

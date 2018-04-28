@@ -5,8 +5,6 @@ const config = require('../src/config')
 jest.mock('../src/util/redis')
 jest.mock('../src/util/request')
 
-const idsOf = (courses) => courses.map(c => c.course_id).sort()
-
 describe('Updater', () => {
 
   describe('if no valid oganisation', () => {
@@ -37,26 +35,26 @@ describe('Updater', () => {
       expect(coursesOforganisation.length).toEqual(1)
 
       const course = {
-        start_date: "2017-10-31T22:00:00.000Z",
-        end_date: "2017-12-14T22:00:00.000Z",
+        start_date: '2017-10-31T22:00:00.000Z',
+        end_date: '2017-12-14T22:00:00.000Z',
         credit_points: 5,
         course_id: 119284687,
         parent_id: null,
-        learningopportunity_id: "TKT21002",
+        learningopportunity_id: 'TKT21002',
         languages: [
           {
-            langcode: "en"
+            langcode: 'en'
           }
         ],
         realisation_name: [
           {
-            langcode: "fi",
-            text: "Introduction to Game Programming"
+            langcode: 'fi',
+            text: 'Introduction to Game Programming'
           }
         ],
         realisation_type_code: 5,
         organisations: [
-          "500-K005"
+          '500-K005'
         ],
         periods: [
           2

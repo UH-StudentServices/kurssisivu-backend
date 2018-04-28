@@ -24,6 +24,15 @@ describe('API', () => {
       await redisClient.setAsync(config.COURSES_KEY, JSON.stringify(data))
     })
 
+    it('valid organisation codes can be queried', async () => {
+      const response = await api
+        .get('/organizations')
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
+      expect(response.body).toEqual(['500-K001', '500-K002', '500-K005', '500-M010'])
+    })
+
     describe('when courses of one organisation are requested', () => {
       it('returns all at specified year for autumn term', async () => {
         const response = await api
@@ -100,7 +109,7 @@ describe('API', () => {
 
     describe('when courses of invalid organisation are requested', () => {
       it('responds with a proper error code', async () => {
-        const response = await api
+        await api
           .get('/organizations/500-K000/courses_list.json?semester=autumn&year=2017')
           .expect(400)
           .expect('Content-Type', /application\/json/)

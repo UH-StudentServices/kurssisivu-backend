@@ -11,7 +11,7 @@ const run = async () => {
 
   if (validOrganizationCodes.length===0) {
     logger.info('no organisation codes in cache')
-    return 
+    return
   }
 
   const learningOpportunityTypecodes = await cache.learningOpportunityTypecodes()
@@ -31,7 +31,7 @@ const run = async () => {
   const coursesOfOrganization = validOrganizationCodes.reduce((object, code) => {
     object[code] = []; return object
   },{})
-  
+
   logger.info('started cache refresh')
 
   for (let i = 0; i < validOrganizationCodes.length ; i++) {
@@ -41,9 +41,7 @@ const run = async () => {
     const courseIds = await oodiApi.courseIdsOfOrganization(organization)
 
     for (let j = 0; j < courseIds.length; j++ ) {
-      const courseId = courseIds[j]
-      
-      const rawCourse = await oodiApi.courseInfo(courseId)
+      const rawCourse = await oodiApi.courseInfo(courseIds[j])
 
       // do not cache children of a course instance
       if (rawCourse.parent_id !== null) {
@@ -54,17 +52,17 @@ const run = async () => {
 
       course.periods = await periodsOf(course)
 
-      course.years = _.uniq([ moment(course.start_date).year(), moment(course.end_date).year()])
+      course.years = _.uniq([moment(course.start_date).year(), moment(course.end_date).year()])
 
       course.learningopportunity_type_code = await learningOpportunityTypecode(course.learningopportunity_id)
 
-      course.organisations.filter(code => validOrganizationCodes.includes(code)).forEach(organisationOfCourse=>{
+      course.organisations.filter(code => validOrganizationCodes.includes(code)).forEach(organisationOfCourse => {
         coursesOfOrganization[organisationOfCourse].push(course)
       })
-    } 
+    }
     logger.info(` completed ${organization}`)
   }
-  
+
   await cache.saveCoursesOfOrganization(coursesOfOrganization)
   await cache.saveLearningOpportunityTypecodes(learningOpportunityTypecodes)
 

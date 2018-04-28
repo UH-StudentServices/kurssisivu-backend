@@ -10,10 +10,6 @@ server.listen(config.PORT, () => {
   logger.info(`Server started on port ${config.PORT}`)
 })
 
-server.on('close', () => {
-  logger.info(`Server stopped`)
-})
-
-process.on('unhandledRejection', (reason, p) => {
+process.on('unhandledRejection', (reason) => {
   logger.error(reason)
 })

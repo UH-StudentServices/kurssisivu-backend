@@ -7,40 +7,40 @@ describe('request to OodiApi', () => {
     const mock = new MockAdapter(axios)
 
     mock.onGet('/courseunitrealisations/periods').reply(200, {
-      "md5": "2dbeda235e3f6cd89ecb69647c4be296",
-      "status": 200,
-      "elapsed": 0.528599927,
-      "data": [
+      'md5': '2dbeda235e3f6cd89ecb69647c4be296',
+      'status': 200,
+      'elapsed': 0.528599927,
+      'data': [
         {
-          "id": 55604246,
-          "start_date": "2005-09-04T21:00:00.000Z",
-          "end_date": "2005-10-22T21:00:00.000Z",
-          "abbreviation": [
+          'id': 55604246,
+          'start_date': '2005-09-04T21:00:00.000Z',
+          'end_date': '2005-10-22T21:00:00.000Z',
+          'abbreviation': [
             {
-              "langcode": "fi",
-              "text": "1"
+              'langcode': 'fi',
+              'text': '1'
             },
             {
-              "langcode": "sv",
-              "text": "1"
+              'langcode': 'sv',
+              'text': '1'
             },
             {
-              "langcode": "en",
-              "text": "1"
+              'langcode': 'en',
+              'text': '1'
             }
           ],
-          "name": [
+          'name': [
             {
-              "langcode": "fi",
-              "text": "2005-2006, 1. periodi"
+              'langcode': 'fi',
+              'text': '2005-2006, 1. periodi'
             },
             {
-              "langcode": "sv",
-              "text": "2005-2006, 1. perioden"
+              'langcode': 'sv',
+              'text': '2005-2006, 1. perioden'
             },
             {
-              "langcode": "en",
-              "text": "2005-2006, 1. period"
+              'langcode': 'en',
+              'text': '2005-2006, 1. period'
             }
           ]
         }
@@ -59,14 +59,11 @@ describe('request to OodiApi', () => {
 
     let exception = false
     try {
-      await request('/courseunitrealisations/periods') 
+      await request('/courseunitrealisations/periods')
     } catch(e) {
       exception = true
     }
-   
-    expect(exception).toBeTruthy()
 
-  
+    expect(exception).toBeTruthy()
   })
 })
-

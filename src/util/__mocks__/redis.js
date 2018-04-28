@@ -1,4 +1,4 @@
-const redis = require("redis-mock")
+const redis = require('redis-mock')
 require('bluebird').promisifyAll(redis.RedisClient.prototype)
 const redisClient = redis.createClient()
 
