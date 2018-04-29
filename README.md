@@ -63,7 +63,7 @@ Response is a JSON-array providing of the type:
 
 ## Configuration
 
-Backend uses following environment variables (defaults):
+Backend uses following environment variables (default values at left):
 
 ```
 COURSES_KEY=courses
