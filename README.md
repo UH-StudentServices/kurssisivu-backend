@@ -14,15 +14,15 @@ GET /ping
 
 pongs.
 
-### Valid organizatio codes
+### Organization codes
 
 ```
 GET /organizations
 ```
 
-returns the organization codes saved at Redis.
+returns the organization codes saved in Redis.
 
-### 
+### Courses of organization(s)
 
 ```
 GET /organizations/{codes}/courses_list.json?semester={semester}&year={year}
