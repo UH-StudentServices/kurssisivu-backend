@@ -127,7 +127,7 @@ Before running updater,  organization codes should be saved in Redis with key _O
 
 Initialisation can be done by running `node init_organisations.js ./organisation_codes.json`
 
-where _./organisation_codes.json_ is the location of codes in JSON form.
+where _./organisation_codes.json_ is the location of codes in JSON format.
 
 ## Tests
 
@@ -137,7 +137,7 @@ Coverage raport: `npm run coverage` 
 
 ## Production setup
 
-Currently Travis runs tests and on success builds a new container [toska/coursepage-backend](https://hub.docker.com/r/toska/coursepage-backend/) that is pushed to DockerHub 
+Currently Travis runs tests and on success builds a new docker image [toska/coursepage-backend](https://hub.docker.com/r/toska/coursepage-backend/) and pushes that to DockerHub 
 
 ### Backend
 
@@ -186,7 +186,7 @@ networks:
 
 Redis saves data in directory _./redis-data_, you need also directory _./data_ for initialising the organisation codes in Redis.
 
-Logs are saved in directory _./logs/_, currently backend is not logging much.
+Logs are saved in directory _./logs_, currently backend is not logging much.
 
 Deploy with: 
 
@@ -198,13 +198,15 @@ docker-compose pull&&docker-compose up -d
 
 ### Initialising organisation codes
 
-Once backend is running, assuming that you have organisation codes as JSON-array in file _./data/organisation_codes.json_, save those to Redis with 
+Once backend is running, assuming that you have organization codes as JSON-array in file _./data/organisation_codes.json_, save those to Redis with 
 
 ```
 docker exec -i -t coursepage-backend node init_organisations.js /data/organisation_codes.json
 ```
 
 ### Cache updater
+
+_docker-compose.yml_ for updater:
 
 ```
 version: '3.5'
