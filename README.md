@@ -83,7 +83,7 @@ Response is a JSON-array of the type:
 
 ## Configuration
 
-Backend uses following environment variables (default values at left):
+Backend uses the following environment variables (default values at right):
 
 ```
 COURSES_KEY=courses
@@ -106,7 +106,7 @@ Run cache updater: `npm run updater`
 
 ### Initialisation of Redis
 
-Before running updater,  organisation keys should be saved in REdis with key _ORGANIZATIONS_KEY_ as an json of the form
+Before running updater,  organization codes should be saved in Redis with key _ORGANIZATIONS_KEY_ as a json of the form
 
 ```
 [
