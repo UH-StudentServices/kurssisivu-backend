@@ -28,10 +28,10 @@ returns the organization codes saved in Redis.
 GET /organizations/{codes}/courses_list.json?semester={semester}&year={year}
 ```
 
-returns courses of the specified organizations
+returns courses of the specified organizations.
 
 - _codes_ is a comma separated list of organization codes
-  - if a code is not among the valid organization codes saved in Redis, response is _400 Bad request_
+  - if a code is not among the valid codes saved in Redis, response is _400 Bad request_
 - query parameters _semester_ and _year_ are optional
 - valid values of semester are _autumn, spring_ and _summer_
   - invalid semesters are ignored
@@ -79,7 +79,7 @@ Response is a JSON-array of the type:
 ]
 ```
 
-**NOTE** response includes now keys _periods_ and _years_. The current version of fronend has a logic for calculationg the period of the course, see [here](https://github.com/UH-StudentServices/kurssisivu/blob/master/src/utils/semesters/index.js) which should be deprecated (since it does not work properly) and the period info provided by API used instead.
+**NOTE** response includes now keys _periods_ and _years_. The current version of the fronend has a logic for calculationg the period of the course (see [here](https://github.com/UH-StudentServices/kurssisivu/blob/master/src/utils/semesters/index.js)) which should be deprecated (since it does not work properly) and the period info provided by API used instead.
 
 ## Configuration
 
