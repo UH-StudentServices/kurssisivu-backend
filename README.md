@@ -4,13 +4,33 @@
 
 ## API
 
-Backend specifies one endpoint  
+Backend specifies three endpoints  
+
+### For testing
 
 ```
-/organizations/{codes}/courses_list.json?semester={semester}&year={year}
+GET /ping
 ```
 
-Codes is a comma separated list of organisation codes. 
+pongs.
+
+### Valid organizatio codes
+
+```
+GET /organizations
+```
+
+returns the organization codes saved at Redis.
+
+### 
+
+```
+GET /organizations/{codes}/courses_list.json?semester={semester}&year={year}
+```
+
+returs courses of the specified organizations.
+
+_codes_ is a comma separated list of organization codes. 
 
 Query parameters _semester_ and _year_ are optional. 
 
@@ -22,7 +42,7 @@ Eg. to get the spring 2018 courses of Department of Computer Science _GET_ to
 https://opetushallinto.cs.helsinki.fi/organizations/500-K005,500-M009,500-M010/courses_list.json?semester=spring&year=2018
 ```
 
-Response is a JSON-array providing of the type:
+Response is a JSON-array of the type:
 
 ```
 [
