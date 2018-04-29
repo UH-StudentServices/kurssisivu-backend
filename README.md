@@ -127,9 +127,9 @@ Before running updater,  organization codes should be saved in Redis with key _O
 
 Initialisation can be done by running `node init_organisations.js ./organisation_codes.json`
 
-where _./organisation_codes.json_ is the location of keys in json form.
+where _./organisation_codes.json_ is the location of codes in JSON form.
 
-## Testing
+## Tests
 
 Run with: `npm test`
 
