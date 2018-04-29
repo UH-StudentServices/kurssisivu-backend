@@ -28,15 +28,13 @@ returns the organization codes saved in Redis.
 GET /organizations/{codes}/courses_list.json?semester={semester}&year={year}
 ```
 
-returs courses of the specified organizations.
+returns courses of the specified organizations.
 
-_codes_ is a comma separated list of organization codes. 
+- _codes_ is a comma separated list of organization codes
+- Query parameters _semester_ and _year_ are optional
+- Valid values of semester are _autumn, spring_ and _summer_
 
-Query parameters _semester_ and _year_ are optional. 
-
-Valid values of semester are _autumn, spring_ and _summer_.
-
-Eg. to get the spring 2018 courses of Department of Computer Science _GET_ to
+Eg. to get spring 2018 courses of Department of Computer Science _GET_ 
 
 ```
 https://opetushallinto.cs.helsinki.fi/organizations/500-K005,500-M009,500-M010/courses_list.json?semester=spring&year=2018
