@@ -14,7 +14,6 @@ const instance = axios.create({
 module.exports = async (url) => {
   try {
     const response = await instance.get(url)
-    console.log(response.data.data)
     return response.data.data
   } catch (e) {
     throw `${e.code} ${e.config.url}`
